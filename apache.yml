@@ -1,5 +1,5 @@
 ---
-- host: 172.31.5.120
+- hosts: 172.31.5.120
   tasks:  
   - name: install apache
     yum:
