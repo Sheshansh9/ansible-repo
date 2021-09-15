@@ -1,0 +1,5 @@
+[webservers]
+172.31.5.120
+
+ansible_user=ec2-user
+ansible_private_key_file=./node.pem
