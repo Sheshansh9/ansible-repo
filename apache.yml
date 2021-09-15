@@ -9,9 +9,3 @@
     copy: 
        src: ansible.html
        dest: /var/www/html/
-  - name: start apache
-    services:
-      name: httpd
-      enabled: yes
-      state: started
-      ignore_errors: true
