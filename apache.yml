@@ -3,14 +3,15 @@
   tasks:  
   - name: install apache
     yum:
-      name: httpd
-      state: present
+        name: httpd
+        state: present
   - name: copy code to remote machine
     copy: 
        src: ansible.html
        dest: /var/www/html/
-- name: Start service httpd, if not started
-  ansible.builtin.service:
-    name: httpd
-    state: started
-          
+  - name: start apache
+    services:
+      name: httpd
+      enabled: yes
+      state: started
+      ignore_errors: true
