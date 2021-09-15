@@ -9,9 +9,8 @@
     copy: 
        src: ansible.html
        dest: /var/www/html/
-  - name: start apache
-    services:
-      name: httpd
-      enabled: yes
-      state: started
+- name: Start service httpd, if not started
+  ansible.builtin.service:
+    name: httpd
+    state: started
           
