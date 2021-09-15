@@ -1,0 +1,17 @@
+---
+- host: 172.31.5.120
+  tasks:  
+  - name: install apache
+    yum:
+      name: httpd
+      state: present
+  - name: copy code to remote machine
+    copy: 
+       src: ansible.html
+       dest: /var/www/html/
+  - name: start apache
+    services:
+      name: httpd
+      enabled: yes
+      state: started
+          
