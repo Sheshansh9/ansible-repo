@@ -1,16 +1,17 @@
----
-- hosts: 172.31.5.120
+- name: Install Apache
+  hosts: all
   become: true
-  tasks:  
-  - name: install apache
+  tasks:
+  - name: Install Apache
     yum:
       name: httpd
-      state: present
-  - name: Copy file with owner and permissions
-  ansible.builtin.copy:
-    src:  ansible.html
-    dest: /var/www/html/
-    owner: root
-    group: root
-    mode: '0644'
-          
+      state: latest
+  - name: Enable apache
+    services:
+      name: httpd
+      state: started
+      enaled: yes
+  - name: Copy file
+    copy:
+      src: ansible.html
+      dest: /var/www/html
