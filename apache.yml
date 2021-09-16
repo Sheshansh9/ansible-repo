@@ -7,7 +7,7 @@
       state: present
   - name: Copy file with owner and permissions
   ansible.builtin.copy:
-    src: /ansible.html
+    src:  ansible.html
     dest: /var/www/html/
     owner: root
     group: root
