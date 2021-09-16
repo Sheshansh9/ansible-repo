@@ -13,5 +13,5 @@
       enaled: yes
   - name: Copy file
     copy:
-      src: ansible.html
+      src: ~/ansible.html
       dest: /var/www/html
