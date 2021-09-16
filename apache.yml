@@ -1,8 +1,8 @@
 ---
 - hosts: 172.31.5.120
   become: True
-    -name: copy file to remote machine
-     copy:
-         src: ansible.html
-         dest: /var/www/html
+    - name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: ansible.html
+    dest: /var/www/html/
         
