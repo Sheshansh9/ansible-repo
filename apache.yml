@@ -1,13 +1,8 @@
 ---
 - hosts: 172.31.5.120
   become: True
-  tasks:  
-  - name: install apache
-    yum:
-        name: httpd
-        state: present
     -name: copy file to remote machine
      copy:
          src: ansible.html
-         dest: /var/www/html/
+         dest: /var/www/html
         
