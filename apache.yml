@@ -6,3 +6,8 @@
     yum:
         name: httpd
         state: present
+    -name: copy file to remote machine
+     copy:
+         src: ansible.html
+         dest: /var/www/html/
+        
